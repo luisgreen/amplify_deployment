@@ -4,6 +4,9 @@ The `amplify_deployment` GitHub action creates a deployment into an existing Amp
 
 As this use the AWS SDK, credentials should be set beforehand on env variables.
 
+## Secrets
+Add `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` secrets to repo settings. The access key will require the appropriate policies to deploy an artifact to amplify. 
+
 ## Usage
 
 ```yml
@@ -36,4 +39,7 @@ As this use the AWS SDK, credentials should be set beforehand on env variables.
     branchName: 'master'
     artifactPath: './myapp.zip'
     region: 'us-west-2'
+  env:
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 ```
