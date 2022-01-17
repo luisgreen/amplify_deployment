@@ -1,9 +1,9 @@
-const core = require('@actions/core');
-const AWS = require('aws-sdk');
-const axios = require('axios');
-const { readFileSync } = require('fs');
+import core from '@actions/core'
+import AWS from 'aws-sdk'
+import axios from 'axios'
+import { readFileSync } from 'fs'
 
-const appId = core.getInput('appId');
+const appId = core.getInput('appId')
 const branchName = core.getInput('branchName');
 const artifactPath = core.getInput('artifactPath');
 const region = core.getInput('region');
